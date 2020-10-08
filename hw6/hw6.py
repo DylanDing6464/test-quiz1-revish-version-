@@ -1,11 +1,22 @@
-# Author: Yanling Wang yuw17@psu.edu
+# Author: Dylan Ding dvd6678@psu.edu
 def isValidKey(key):
   """
   Returns True if key is a string that has 26 characters and each of the letter
   'a'/'A'-'z'/'Z' appeared once and only once in either lower case or upper case.
   Returns False otherwise.
   """
-  return True
+  keyStr = key.upper()  
+  keyList = list(keyStr)
+  keyLLen = len(keyList) #lenth of the keyList
+
+  if keyLLen == 26:
+    for i in range (0,keyLLen):
+      for j in range (i+1,keyLLen):
+        if keyList[i] == keyList[j]:
+          return False
+    return True
+  else:
+    return False
 
 def replace(letter, key):
   """
@@ -13,7 +24,16 @@ def replace(letter, key):
   Replace a single letter with its corresponding key, returns letter if it is
   not in the alphabet 'a'-'z' or 'A'-'Z'
   """
+  keyStr = key.upper()  
+  keyList = list(keyStr)
+  keyLLen = len(keyList) #lenth of the keyList
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  alphList = list(alphabet)
+
+  for i in range (0,keyLLen):
+
   return letter
+
 
 def substitution(plainText, key):
   """
